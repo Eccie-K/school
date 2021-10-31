@@ -96,6 +96,38 @@
           </div>
           <br>
           <div class=form>
+            <form id="contact-form" action="/" method="post">
+        <h3>Get in touch</h3>
+        <h4>Fill in the form below, and we'll get back to you within 24 hours.</h4>
+        <div>
+                <label>
+                        <span>Name: (required)</span>
+                        <input placeholder="Please enter your name" type="text" tabindex="1" required autofocus>
+                </label>
+        </div>
+        <div>
+                <label>
+                        <span>Email: (required)</span>
+                        <input placeholder="Please enter your email address" type="email" tabindex="2" required>
+                </label>
+        </div>
+        <div>
+                <label>
+                        <span>Telephone: (required)</span>
+                        <input placeholder="Please enter your number" type="tel" tabindex="3" required>
+                </label>
+        </div>
+        
+        <div>
+                <label>
+                        <span>Message: (required)</span>
+                        <textarea placeholder="Include all the details you can" tabindex="5" required></textarea>
+                </label>
+        </div>
+        <div>
+                <button name="submit" type="submit" id="contact-submit">Send Email</button>
+        </div>
+</form>
    
  </div>
  <div class="footer">
@@ -127,7 +159,7 @@
    }
 
    .form{
-     margin-left: 20%;
+     margin-left: 25%;
      margin-right: 15%;
    }
 
@@ -137,4 +169,84 @@
     background-color: rgba(6, 10, 54, 0.842);
    } 
 
+   #contact-form input[type="text"],
+#contact-form input[type="email"],
+#contact-form input[type="tel"],
+#contact-form textarea {
+    width:100%;
+    box-shadow:inset 0 1px 2px #DDD, 0 1px 0 #FFF;
+    -webkit-box-shadow:inset 0 1px 2px #DDD, 0 1px 0 #FFF;
+    -moz-box-shadow:inset 0 1px 2px #DDD, 0 1px 0 #FFF;
+    border:1px solid #CCC;
+    background:#FFF;
+    margin:0 0 5px;
+    padding:10px;
+    border-radius:5px;
+}
+
+#contact-form button[type="submit"] {
+    cursor:pointer;
+    width:100%;
+    border:none;
+    background:rgb(182, 171, 110);
+    background-image:linear-gradient(bottom, rgb(182, 171, 110) 0%, rgb(182, 171, 110) 52%);
+    background-image:-moz-linear-gradient(bottom, rgb(182, 171, 110)0%, rgb(182, 171, 110) 52%);
+    background-image:-webkit-linear-gradient(bottom,rgb(182, 171, 110)  0%, rgb(182, 171, 110) 52%);
+    color:#FFF;
+    margin:0 0 5px;
+    padding:10px;
+    border-radius:5px;
+}
+
+::-webkit-input-placeholder {
+    color:#888;
+}
+:-moz-placeholder {
+    color:#888;
+}
+::-moz-placeholder {
+    color:#888;
+}
+:-ms-input-placeholder {
+    color:#888;
+}
+
 </style>
+<script>
+  (function() {
+ 
+    // Create input element for testing
+    var input = document.createElement('input');
+     
+    // Create the supports object
+    var supports = {};
+     
+    supports.autofocus   = 'autofocus' in input;
+    supports.required    = 'required' in input;
+    supports.placeholder = 'placeholder' in input;
+ 
+    // Fallback for autofocus attribute
+    if(!supports.autofocus) {
+         
+    }
+     
+    // Fallback for required attribute
+    if(!supports.required) {
+         
+    }
+ 
+    // Fallback for placeholder attribute
+    if(!supports.placeholder) {
+         
+    }
+     
+    // Change text inside send button on submit
+    var send = document.getElementById('contact-submit');
+    if(send) {
+        send.onclick = function () {
+            this.innerHTML = '...Sending';
+        }
+    }
+ 
+})();
+</script>
